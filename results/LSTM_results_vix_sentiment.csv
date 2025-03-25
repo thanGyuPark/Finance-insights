@@ -1,2 +1,0 @@
-Company,RMSE (no sentiment),MAE (no sentiment),MAPE (no sentiment),Accuracy (no sentiment),RMSE (with sentiment),MAE (with sentiment),MAPE (with sentiment),Accuracy (with sentiment)
-TSLA,0.0159156476943844,0.01262578368367983,17.5984327438595,24.20516129032258,0.015674643225553002,0.012683753837599558,17.046696011802773,25.237096774193546
