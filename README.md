@@ -136,3 +136,29 @@ Studying Financial Knowledge
 - **예측 성능과 코드 안정성 모두 고려한 구조**
 - 확장성과 유지보수 측면에서 가장 적합
 - 추후 FinBERT 감성지표 추가 시도에 적합한 베이스라인
+
+
+
+#### 
+일간 뉴스 5가지 각각 감정분석한 값을 평균내어 진행
+감정분석의 경우 단순 모델과 앙상블 모델을 비교하여 진행
+좋아! 아래는 두 코드의 차이를 README.md에 정리하기 좋은 형태로 정리한 내용이야.
+목표는 뉴스 기반 감성 분석에 사용한 두 방법(1. Ensemble 방식, 2. 단일 모델 방식)을 비교해서 설명하는 것이고, 표 형식도 함께 제공할게.
+
+⸻
+
+🧠 뉴스 감성 분석 방식 비교 (Ensemble vs Single Model)
+
+본 프로젝트에서는 뉴스 타이틀을 기반으로 주가 예측용 감성 점수를 생성하기 위해 두 가지 접근을 사용했습니다:
+
+항목	앙상블 방식 (dual-model ensemble)	단일 모델 방식 (single-model)
+🔍 사용 모델	ProsusAI/finbert + yiyanghkust/finbert-tone	ProsusAI/finbert
+🎯 감정 점수 방식	두 모델의 점수 평균	감정 레이블을 수치로 변환 (90, 50, 10)
+🧮 점수 계산 방식	score = (model1_score + model2_score) / 2	positive: 90, neutral: 50, negative: 10
+📊 결과 값	Ensemble_Sentiment_Score (0–100)	sentiment_mean, sentiment_mean_scaled
+📁 결과 파일	- meta_news_with_ensemble_sentiment.csv- meta_daily_ensemble_sentiment_avg.csv	- meta_news_with_sentiment.csv- meta_daily_sentiment_avg.csv
+📦 장점	다양한 모델의 판단 반영으로 노이즈 보완 가능	빠르고 간단한 처리, 재현성 높음
+⚠️ 단점	속도 느림, 리소스 많이 소모	단일 모델 한계 존재
+
+
+⸻
